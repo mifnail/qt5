@@ -65,40 +65,27 @@
     <string>SrAge</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="cb_Find">
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>150</y>
+     <y>140</y>
      <width>69</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="labelFind">
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>130</y>
+     <y>120</y>
      <width>47</width>
      <height>13</height>
     </rect>
    </property>
    <property name="text">
     <string>Поиск</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>200</y>
-     <width>111</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
    </property>
   </widget>
   <widget class="QTableWidget" name="twStaffs">
@@ -108,6 +95,29 @@
      <y>240</y>
      <width>491</width>
      <height>251</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonFind">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>200</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>поиск</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineFind">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>170</y>
+     <width>113</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
