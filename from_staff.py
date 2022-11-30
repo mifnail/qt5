@@ -25,7 +25,7 @@ class Ui_Form(object):
         self.pushButtonDelete.setGeometry(QtCore.QRect(270, 80, 75, 23))
         self.pushButtonDelete.setObjectName("pushButtonDelete")
         self.label_SrAge = QtWidgets.QLabel(Form)
-        self.label_SrAge.setGeometry(QtCore.QRect(130, 220, 47, 13))
+        self.label_SrAge.setGeometry(QtCore.QRect(80, 210, 141, 16))
         self.label_SrAge.setObjectName("label_SrAge")
         self.cb_Find = QtWidgets.QComboBox(Form)
         self.cb_Find.setGeometry(QtCore.QRect(270, 140, 69, 22))
