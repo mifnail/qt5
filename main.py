@@ -1,34 +1,33 @@
 import sys
-from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QLCDNumber
-
-class Example(QWidget):
+import sqlite3
+from PyQt5.QtWidgets import QApplication,QWidget
+from from_staff import Ui_Form
+class MyWidget(QWidget,Ui_Form):
     def __init__(self):
-        super(Example, self).__init__()
-        self.initUI()
+        super(MyWidget,self).__init__()
+        self.setupUi(self)
+        self.pushButtonOpen.clicked.connect(self.open())
+    def open(self):
+        try:
+            self.conn=sqlite3.connect('staff_db.db')
+            cur=self.conn.cursor()
+            data=cur.execute("select * from staff")
+            col_name = [i[0] for i in data.description]
+            data_rows=data.fetchall()
+        except Exception as e:
+            print('Ошибка подключение к БД')
+            return e
+        self.twStaffs.setColumnCount(len(col_name))
 
-    def initUI(self):
-        self.setGeometry(300,300,300,300)
-        self.setWindowTitle('ПерваяПрограмма')
-        self.btn=QPushButton('Кнопка',self)
-        self.btn.resize(self.btn.sizeHint())
-        self.btn.move(100,150)
-        self.btn.clicked.connect(self.inc_click)
-
-        self.label=QLabel(self)
-        self.label.setText('КОличество нажатий на кнопку:')
-        self.LCD_count=QLCDNumber(self)
-        self.LCD_count.move(110,80)
-        self.count =0
-
-    def inc_click(self):
-        self.count+=1
-        self.LCD_count.display(self.count)
-
-
+        for i, row in enumerate(data_rows):
+            self.twStaffs.setRowCount(self.twStaffs.rowCount()+1)
+            for j, elem in enumerate(row):
+                self.twStaffs.setItem(i,j,QTableWidgetItem(str(elem)))
+        self.twStaff.resizeColumnsToConnect
 
 
 if __name__ =='__main__':
     app=QApplication(sys.argv)
-    ex=Example()
+    ex=MyWidget()
     ex.show()
     sys.exit(app.exec())
