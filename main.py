@@ -20,7 +20,6 @@ class Example(QWidget):
         self.LCD_count.move(110,80)
         self.count =0
 
-
     def inc_click(self):
         self.count+=1
         self.LCD_count.display(self.count)
